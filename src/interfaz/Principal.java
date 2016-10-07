@@ -21,9 +21,9 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
-        JButton botonesH[]={cmdCrear, cmdLimpiar};
-        JButton botonesD[]={cmdLlenadoManual,cmdLlenadoAutomatico,cmdOperacion};
-        
+        JButton botonesH[] = {cmdCrear, cmdLimpiar};
+        JButton botonesD[] = {cmdLlenadoManual, cmdLlenadoAutomatico, cmdOperacion};
+
         Helper.habilitarBotones(botonesH);
         Helper.deshabilitarBotones(botonesD);
     }
@@ -174,7 +174,7 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 360, 210));
 
-        cmbOperaciones.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cant. Num Pares", "Números Pares", "Letra C", "Diagonal Prinpal", "Letra H", "Recorrido Uno", "Recorrido Dos" }));
+        cmbOperaciones.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cant. Num Pares", "Números Pares", "Letra C", "Diagonal Prinpal", "Letra H", "Recorrido Uno", "Recorrido Dos", "Recorrido Tres" }));
         jPanel1.add(cmbOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, -1, -1));
 
         tblTablaInicial.setModel(new javax.swing.table.DefaultTableModel(
@@ -236,9 +236,9 @@ public class Principal extends javax.swing.JFrame {
         tm2.setRowCount(nf);
         tm2.setColumnCount(nc);
 
-        JButton botonesH[]={cmdLlenadoManual,cmdLlenadoAutomatico, cmdLimpiar};
-        JButton botonesD[]={cmdCrear, cmdOperacion};
-        
+        JButton botonesH[] = {cmdLlenadoManual, cmdLlenadoAutomatico, cmdLimpiar};
+        JButton botonesD[] = {cmdCrear, cmdOperacion};
+
         Helper.habilitarBotones(botonesH);
         Helper.deshabilitarBotones(botonesD);
     }//GEN-LAST:event_cmdCrearActionPerformed
@@ -257,9 +257,9 @@ public class Principal extends javax.swing.JFrame {
 
         }
 
-        JButton botonesH[]={cmdOperacion, cmdLimpiar};
-        JButton botonesD[]={cmdCrear, cmdLlenadoManual, cmdLlenadoAutomatico};
-        
+        JButton botonesH[] = {cmdOperacion, cmdLimpiar};
+        JButton botonesD[] = {cmdCrear, cmdLlenadoManual, cmdLlenadoAutomatico};
+
         Helper.habilitarBotones(botonesH);
         Helper.deshabilitarBotones(botonesD);
 
@@ -269,7 +269,7 @@ public class Principal extends javax.swing.JFrame {
         int op, cantPares;
         op = cmbOperaciones.getSelectedIndex();
         Helper.limpiadoTabla(tblTablaResultado);
-        
+
         switch (op) {
             case 0:
                 cantPares = Helper.cantidadPares(tblTablaInicial);
@@ -287,18 +287,20 @@ public class Principal extends javax.swing.JFrame {
             case 4:
                 Helper.letraH(tblTablaInicial, tblTablaResultado);
                 break;
-                 case 5:
+            case 5:
                 txtResultado.setText(Helper.recorridoUno(tblTablaInicial));
                 break;
-                  case 6:
+            case 6:
                 txtResultado.setText(Helper.recorridoDos(tblTablaInicial));
                 break;
-                     
+            case 7:
+                txtResultado.setText(Helper.recorridoTresProfe(tblTablaInicial));
+                break;
         }
-        
-        JButton botonesH[]={cmdOperacion,cmdLimpiar};
-        JButton botonesD[]={cmdLlenadoManual,cmdLlenadoAutomatico};
-        
+
+        JButton botonesH[] = {cmdOperacion, cmdLimpiar};
+        JButton botonesD[] = {cmdLlenadoManual, cmdLlenadoAutomatico};
+
         Helper.habilitarBotones(botonesH);
         Helper.deshabilitarBotones(botonesD);
 
@@ -312,12 +314,12 @@ public class Principal extends javax.swing.JFrame {
         cmbOperaciones.setSelectedIndex(0);
         txtResultado.setText("");
 
-       Helper.porDefectoTabla(tblTablaInicial);
-       Helper.porDefectoTabla(tblTablaResultado);
-       
-       JButton botonesH[]={cmdCrear, cmdLimpiar};
-        JButton botonesD[]={cmdLlenadoManual,cmdLlenadoAutomatico,cmdOperacion};
-        
+        Helper.porDefectoTabla(tblTablaInicial);
+        Helper.porDefectoTabla(tblTablaResultado);
+
+        JButton botonesH[] = {cmdCrear, cmdLimpiar};
+        JButton botonesD[] = {cmdLlenadoManual, cmdLlenadoAutomatico, cmdOperacion};
+
         Helper.habilitarBotones(botonesH);
         Helper.deshabilitarBotones(botonesD);
 
@@ -357,9 +359,9 @@ public class Principal extends javax.swing.JFrame {
                 } while (sw == 0);
             }
         }
-        JButton botonesH[]={cmdOperacion, cmdLimpiar};
-        JButton botonesD[]={cmdCrear, cmdLlenadoManual, cmdLlenadoAutomatico};
-        
+        JButton botonesH[] = {cmdOperacion, cmdLimpiar};
+        JButton botonesD[] = {cmdCrear, cmdLlenadoManual, cmdLlenadoAutomatico};
+
         Helper.habilitarBotones(botonesH);
         Helper.deshabilitarBotones(botonesD);
     }//GEN-LAST:event_cmdLlenadoManualActionPerformed
